@@ -1,0 +1,6 @@
+{
+  "easycompile.sass": {
+    "out": false,
+    "sourceMap": false
+  }
+}
