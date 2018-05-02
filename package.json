@@ -1,0 +1,40 @@
+{
+  "name": "halo-player",
+  "version": "0.1.0",
+  "description": "HTML5 player",
+  "main": "halo.js",
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexgred/halo-player.git"
+  },
+  "keywords": [
+    "cookie",
+    "jquery",
+    "js",
+    "accept"
+  ],
+  "author": "Alex Dolzhenkov <alexgred.dev@gmail.com>",
+  "contributors": [
+    {
+      "name": "AlexGred",
+      "email": "alexgred.dev@gmail.com",
+      "url": "https://github.com/AlexGred"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexgred/halo-player/issues"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.2",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
