@@ -4,11 +4,14 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
+const rollup = require('gulp-better-rollup')
+
 
 
 /* Dev
@@ -27,9 +30,11 @@ gulp.task('dev:styles', function() {
 /* js */
 gulp.task('dev:js', function(cb) {
   return gulp.src('./src/js/halo.js')
-    .pipe(babel({
-      presets: ['env']
+    .pipe(rollup({
+      plugins: [babel()],
+      format: 'cjs',
     }))
+    // .pipe(concat('halo.js'))
     .pipe(gulp.dest('./public/js'));
 });
 
