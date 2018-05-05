@@ -55,7 +55,7 @@ gulp.task('dev:clean', function() {
 ========================== */
 gulp.task('sync', function() {
   browserSync.init({
-    server: './'
+    server: './public/'
   });
 
   browserSync.watch('./public/css/*.css').on('change', browserSync.reload);
@@ -69,7 +69,7 @@ gulp.task('sync', function() {
 
 /* Watch */
 gulp.task('watch', function() {
-  gulp.watch('./src/less/**/*.less', gulp.series('dev:styles')); // watch styles
+  gulp.watch('./src/sass/**/*.scss', gulp.series('dev:styles')); // watch styles
   gulp.watch('./src/js/**/*.js', gulp.series('dev:js')); // watch js files
   gulp.watch('./src/icons/**/*.*', gulp.series('dev:icons')); // watch imgs
 });
