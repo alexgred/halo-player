@@ -1,5 +1,4 @@
 node_modules/*
 *.css.map
-index.html
 public/*
 package-lock.json
