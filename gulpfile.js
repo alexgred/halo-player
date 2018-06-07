@@ -4,15 +4,14 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
-const cleanCSS = require('gulp-clean-css');
-const rename = require('gulp-rename');
-const babel = require('gulp-babel');
+const browserify = require('browserify');
+const tsify = require('tsify');
+const source = require('vinyl-source-stream');
 const browserSync = require('browser-sync');
-const rollup = require('gulp-better-rollup')
 
-
+// const uglify = require('gulp-uglify');
+// const cleanCSS = require('gulp-clean-css');
+// const rename = require('gulp-rename');
 
 /* Dev
 ==================== */
@@ -27,15 +26,18 @@ gulp.task('dev:styles', function() {
     .pipe(gulp.dest('./public/css'))
 });
 
-/* js */
-gulp.task('dev:js', function(cb) {
-  return gulp.src('./src/js/halo.js')
-    .pipe(rollup({
-      plugins: [babel()],
-      format: 'cjs',
-    }))
-    // .pipe(concat('halo.js'))
-    .pipe(gulp.dest('./public/js'));
+gulp.task('dev:ts', function () {
+  return browserify({
+      basedir: '.',
+      debug: true,
+      entries: ['src/ts/halo.ts'],
+      cache: {},
+      packageCache: {}
+  })
+  .plugin(tsify)
+  .bundle()
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('./public/js'));
 });
 
 /* Icons */
@@ -60,7 +62,7 @@ gulp.task('dev:clean', function() {
 ========================== */
 gulp.task('sync', function() {
   browserSync.init({
-    server: './public/'
+    server: './'
   });
 
   browserSync.watch('./public/css/*.css').on('change', browserSync.reload);
@@ -74,15 +76,15 @@ gulp.task('sync', function() {
 
 /* Watch */
 gulp.task('watch', function() {
-  gulp.watch('./src/sass/**/*.scss', gulp.series('dev:styles')); // watch styles
-  gulp.watch('./src/js/**/*.js', gulp.series('dev:js')); // watch js files
+  gulp.watch('./src/less/**/*.less', gulp.series('dev:styles')); // watch styles
+  gulp.watch('./src/ts/**/*.ts', gulp.series('dev:ts')); // watch ts files
   gulp.watch('./src/icons/**/*.*', gulp.series('dev:icons')); // watch imgs
 });
 
 /* Dev build*/
 gulp.task('dev:build', gulp.series(
   'dev:clean', 
-  gulp.parallel('dev:styles', 'dev:icons', 'dev:js')
+  gulp.parallel('dev:styles', 'dev:icons', 'dev:ts')
 ));
 
 /* Dev  build + watch */
