@@ -29,7 +29,7 @@
     "url": "https://github.com/alexgred/halo-player/issues"
   },
   "devDependencies": {
-    "browser-sync": "^2.24.2",
+    "browser-sync": "^2.24.5",
     "browserify": "^16.2.2",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
@@ -37,9 +37,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.2",
     "tsify": "^4.0.0",
     "typescript": "^2.8.3",
-    "vinyl-source-stream": "^2.0.0",
-    "gulp-uglify": "^3.0.0"
+    "vinyl-source-stream": "^2.0.0"
   }
 }
