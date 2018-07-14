@@ -30,7 +30,7 @@ gulp.task('dev:ts', function () {
   return browserify({
       basedir: '.',
       debug: true,
-      entries: ['src/ts/halo.ts'],
+      entries: ['src/ts/Halo.ts'],
       cache: {},
       packageCache: {}
   })
