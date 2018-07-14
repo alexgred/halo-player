@@ -12,7 +12,7 @@ class Halo {
 
     this.container = new Ui(className, this.config);
 
-    this.container
+    this.container;
   }
 }
 
