@@ -19,6 +19,7 @@ export default class Ui {
     this.config;
     this.controls;
 
+    this.getPlayButton();
     this.getControls();
   }
 
@@ -45,8 +46,14 @@ export default class Ui {
     };
     let controls: Utils = new Utils('div', attributes);
 
-    controls.appendChild(this.controls.playButton.getElement);
+    controls.appendChild(this.controls.controlsPlay.getElement);
+    controls.appendChild(this.controls.controlsMute.getElement);
+    controls.appendChild(this.controls.controlsFullScreen.getElement);
 
     this.container.appendChild(controls.getElement);
+  }
+
+  private getPlayButton() {
+    this.container.appendChild(this.controls.playButton.getElement);
   }
 }

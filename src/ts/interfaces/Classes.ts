@@ -6,4 +6,7 @@ export default interface Classes {
   readonly video: string;
   readonly playButton: string;
   readonly controls: string;
+  readonly controlsPlay: string;
+  readonly controlsMute: string;
+  readonly controlsFullScreen: string;
 }

@@ -8,7 +8,10 @@ const defaults: Config = {
     container: 'halo__container',
     video: 'halo__video',
     playButton: 'halo__play-button',
-    controls: 'halo__controls'
+    controls: 'halo__controls',
+    controlsPlay: 'halo__controls-play',
+    controlsMute: 'halo__controls-mute',
+    controlsFullScreen: 'halo__controls-fullscreen'
   }
 };
 
