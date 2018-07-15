@@ -1,4 +1,4 @@
-export class Utils {
+export default class Utils {
   protected element: HTMLElement;
   private tag: string;
   private attributes: Object;

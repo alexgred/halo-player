@@ -5,8 +5,10 @@ import Config from '../interfaces/Config';
  */
 const defaults: Config = {
   classes: {
-    container: 'halo_container',
-    video: 'halo_video'
+    container: 'halo__container',
+    video: 'halo__video',
+    playButton: 'halo__play-button',
+    controls: 'halo__controls'
   }
 };
 
