@@ -1,14 +1,14 @@
 import Utils from './utils/Utils';
 import Controls from './Controls';
-import Config from './interfaces/Config';
+import IConfig from './interfaces/IConfig';
 
 export default class Ui {
-  private readonly config: Config;
+  private readonly config: IConfig;
   private container: HTMLElement;
   private video: HTMLVideoElement;
   private controls: Controls;
 
-  constructor(className: string, config: Config) {
+  constructor(className: string, config: IConfig) {
     this.config = config;
     this.video = this.getVideo(className);
     this.container = this.getContainer(className);

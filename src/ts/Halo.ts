@@ -1,10 +1,10 @@
 import defaults from './config/defaults';
 import Ui from './Ui';
 
-import Config from './interfaces/Config';
+import IConfig from './interfaces/IConfig';
 
 class Halo {
-  public readonly config: Config;
+  public readonly config: IConfig;
   private container: Ui;
 
   constructor(className: string) {

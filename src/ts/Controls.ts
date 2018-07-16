@@ -1,14 +1,14 @@
 import Utils from './utils/Utils';
-import Config from './interfaces/Config';
+import IConfig from './interfaces/IConfig';
 
 export default class Controls {
-  private readonly config: Config;
+  private readonly config: IConfig;
   public playButton: Utils;
   public controlsPlay: Utils;
   public controlsMute: Utils;
   public controlsFullScreen: Utils;
 
-  constructor(config: Config) {
+  constructor(config: IConfig) {
     this.config = config;
     this.playButton = this.createPlayButton();
     this.controlsPlay = this.createControlsPlay();

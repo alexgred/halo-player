@@ -1,7 +1,7 @@
 /**
  * @description Interface for classes in config interface.
  */
-export default interface Classes {
+export default interface IClasses {
   readonly container: string;
   readonly video: string;
   readonly playButton: string;

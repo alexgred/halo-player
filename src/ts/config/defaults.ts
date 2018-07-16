@@ -1,9 +1,9 @@
-import Config from '../interfaces/Config';
+import IConfig from '../interfaces/IConfig';
 
 /**
  * @description Config object of default value.
  */
-const defaults: Config = {
+const defaults: IConfig = {
   classes: {
     container: 'halo__container',
     video: 'halo__video',
