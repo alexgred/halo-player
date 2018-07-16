@@ -47,6 +47,13 @@ gulp.task('dev:icons', function() {
     .pipe(gulp.dest('./public/icons'));
 });
 
+/* Icons */
+gulp.task('dev:fonts', function() {
+  
+  return gulp.src('./src/fonts/*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
 
 /* Clean directories 
 ============================*/
@@ -54,7 +61,7 @@ gulp.task('dev:icons', function() {
 /* Dev */
 gulp.task('dev:clean', function() {
 
-  return del(['./public/js', './public/css', './public/icons']);
+  return del(['./public/js', './public/css', './public/icons', './public/fonts']);
 });
 
 
@@ -84,7 +91,7 @@ gulp.task('watch', function() {
 /* Dev build*/
 gulp.task('dev:build', gulp.series(
   'dev:clean', 
-  gulp.parallel('dev:styles', 'dev:icons', 'dev:ts')
+  gulp.parallel('dev:styles', 'dev:icons', 'dev:fonts', 'dev:ts')
 ));
 
 /* Dev  build + watch */
