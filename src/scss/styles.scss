@@ -3,6 +3,7 @@
  */
 
 @import './variables'; // variables
+@import './icons'; // icons
 
 .halo {
 
@@ -22,18 +23,27 @@
   &__play-button {
     width: 50px;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
-    background-color: $color;
+    background-color: $colorPlayBtn;
     cursor: pointer;
     transition: all 0.4s;
-    opacity: 0.7;
+
+    &:before {
+      display: block;
+      font-size: 20px;
+      font-family: 'Halo';
+      color: $controlsColor;
+    }
 
     &:hover {
-      opacity: 1;
+      background-color: $color;
     }
   }
 
@@ -63,9 +73,19 @@
     border-radius: 3px;
     background-color: transparent;
     transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       background-color: $color;
+    }
+
+    &:before {
+      display: block;
+      font-size: 18px;
+      font-family: 'Halo';
+      color: $controlsColor;
     }
   }
 }

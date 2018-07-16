@@ -1,0 +1,45 @@
+/**
+ * Icons
+ */
+
+.halo {
+
+  &__icon {
+
+    &-expand:before {
+      content: "\e900";
+    }
+
+    &-cog:before {
+      content: "\e901";
+    }
+
+    &-gear:before {
+      content: "\e901";
+    }
+
+    &-pause:before {
+      content: "\e902";
+    }
+
+    &-play:before {
+      content: "\e903";
+    }
+
+    &-volume-medium:before {
+      content: "\ea27";
+    }
+
+    &-volume-low:before {
+      content: "\ea28";
+    }
+
+    &-volume-mute:before {
+      content: "\ea29";
+    }
+
+    &-volume-mute2:before {
+      content: "\ea2a";
+    }
+  }
+}
