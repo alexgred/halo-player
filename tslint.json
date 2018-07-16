@@ -36,7 +36,11 @@
       "log"
     ],
     "no-duplicate-imports": true,
-    "class-name": true
+    "class-name": true,
+    "interface-name": [
+      true, 
+      "always-prefix"
+    ]
   },
   "defaultSeverity": "warning"
 }
