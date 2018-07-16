@@ -19,7 +19,7 @@ const browserSync = require('browser-sync');
 /* Style */
 gulp.task('dev:styles', function() {
 
-  return gulp.src('./src/sass/styles.scss')
+  return gulp.src('./src/scss/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write('./'))
@@ -76,7 +76,7 @@ gulp.task('sync', function() {
 
 /* Watch */
 gulp.task('watch', function() {
-  gulp.watch('./src/less/**/*.less', gulp.series('dev:styles')); // watch styles
+  gulp.watch('./src/scss/**/*.scss', gulp.series('dev:styles')); // watch styles
   gulp.watch('./src/ts/**/*.ts', gulp.series('dev:ts')); // watch ts files
   gulp.watch('./src/icons/**/*.*', gulp.series('dev:icons')); // watch imgs
 });
