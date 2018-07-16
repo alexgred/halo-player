@@ -9,9 +9,9 @@ const defaults: IConfig = {
     video: 'halo__video',
     playButton: 'halo__play-button',
     controls: 'halo__controls',
-    controlsPlay: 'halo__controls-play',
-    controlsMute: 'halo__controls-mute',
-    controlsFullScreen: 'halo__controls-fullscreen'
+    controlsPlay: 'halo__control halo__control-play',
+    controlsMute: 'halo__control halo__control-mute',
+    controlsFullScreen: 'halo__control halo__control-fullscreen'
   }
 };
 
