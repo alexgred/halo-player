@@ -1,0 +1,19 @@
+/**
+ * Container
+ */
+ 
+.halo {
+
+  &__container {
+    width: 300px;
+    height: auto;
+    position: relative;
+    box-sizing: border-box;
+  }
+
+  &__video {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+}
