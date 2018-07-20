@@ -12,7 +12,7 @@ export default class Ui {
     this.config = config;
     this.video = this.getVideo(className);
     this.container = this.getContainer(className);
-    this.controls = new Controls(this.config);
+    this.controls = new Controls(this.config, this.video);
 
     this.container;
     this.video;

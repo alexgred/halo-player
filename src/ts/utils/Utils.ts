@@ -44,4 +44,8 @@ export default class Utils {
   public appendChild(child: HTMLElement) {
     this.element.appendChild(child);
   }
+
+  public addListner(event: string, callback: EventListenerOrEventListenerObject) {
+    this.element.addEventListener(event, callback);
+  }
 }
