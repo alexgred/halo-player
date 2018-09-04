@@ -9,4 +9,10 @@ export default interface IClasses {
   readonly controlsPlay: string;
   readonly controlsMute: string;
   readonly controlsFullScreen: string;
+  readonly controlsIconPlay: string;
+  readonly controlsIconPause: string;
+  readonly controlsIconUnmuted: string; 
+  readonly controlsIconMuted: string;
+  readonly controlHide: string;
+  readonly controlShow: string;
 }

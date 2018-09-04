@@ -35,17 +35,30 @@ export default class Utils {
     return element;
   }
 
-  public append(selector: string) {
+  public removeClass(className: string): void {
+    this.element.classList.remove(className);
+  }
+
+  public addClass(className: string): void {
+    this.element.classList.add(className);
+  }
+
+  public changeClasses(removedClass: string, addedClass: string): void {
+    this.removeClass(removedClass);
+    this.addClass(addedClass);
+  }
+
+  public append(selector: string): void {
     let parent: HTMLElement = document.querySelector(selector);
 
     parent.appendChild(this.element);
   }
 
-  public appendChild(child: HTMLElement) {
+  public appendChild(child: HTMLElement): void {
     this.element.appendChild(child);
   }
 
-  public addListner(event: string, callback: EventListenerOrEventListenerObject) {
+  public addListner(event: string, callback: EventListenerOrEventListenerObject): void {
     this.element.addEventListener(event, callback);
   }
 }

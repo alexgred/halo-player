@@ -1,9 +1,11 @@
 import Utils from './utils/Utils';
 import IConfig from './interfaces/IConfig';
 import IFullScreen from './interfaces/IFullScreen';
+import IClasses from './interfaces/IClasses';
 
 export default class Controls {
   private readonly config: IConfig;
+  private readonly classes: IClasses;
   private video: IFullScreen;
   public playButton: Utils;
   public controlsPlay: Utils;
@@ -12,16 +14,19 @@ export default class Controls {
 
   constructor(config: IConfig, video: HTMLVideoElement) {
     this.config = config;
+    this.classes = config.classes;
     this.video = video;
-    this.playButton = this.createContol('div', this.config.classes.playButton, 'play');
-    this.controlsPlay = this.createContol('div', config.classes.controlsPlay, 'play');
-    this.controlsMute = this.createContol('div', this.config.classes.controlsMute, 'mute');
-    this.controlsFullScreen = this.createContol('div', this.config.classes.controlsFullScreen, 'fullscreen');
+    this.playButton = this.createContol('div', this.classes.playButton, 'playButton');
+    this.controlsPlay = this.createContol('div', this.classes.controlsPlay, 'play');
+    this.controlsMute = this.createContol('div', this.classes.controlsMute, 'mute');
+    this.controlsFullScreen = this.createContol('div', this.classes.controlsFullScreen, 'fullscreen');
+
+    this.config;
   }
 
   private createContol(tagName: string, className: string, type: string): Utils {
     const attributes: Object = {
-      class: className
+      class: className,
     };
     const control: Utils = new Utils(tagName, attributes);
 
@@ -34,21 +39,42 @@ export default class Controls {
     let eventListner: EventListenerOrEventListenerObject;
 
     switch (type) {
-      case 'play':
+      case 'playButton':
         eventListner = () => {
           this.video.play();
+          control.changeClasses(this.classes.controlShow, this.classes.controlHide);
+
+          this.controlsPlay.changeClasses(this.classes.controlsIconPlay, this.classes.controlsIconPause);
         };
         break;
 
-      case 'pause':
+      case 'play':
         eventListner = () => {
-          this.video.pause();
+          
+          if (this.video.paused) {
+            this.video.play();
+            control.changeClasses(this.classes.controlsIconPlay, this.classes.controlsIconPause);
+            this.playButton.changeClasses(this.classes.controlShow, this.classes.controlHide);
+          }
+          else {
+            this.video.pause();
+            control.changeClasses(this.classes.controlsIconPause, this.classes.controlsIconPlay);
+            this.playButton.changeClasses(this.classes.controlHide, this.classes.controlShow);
+          }
         };
         break;
 
       case 'mute':
         eventListner = () => {
-          this.video.muted = true;
+
+          if (this.video.muted) {
+            this.video.muted = false;
+            control.changeClasses(this.classes.controlsIconMuted, this.classes.controlsIconUnmuted);
+          }
+          else {
+            this.video.muted = true;
+            control.changeClasses(this.classes.controlsIconUnmuted, this.classes.controlsIconMuted);
+          }
         };
         break;
 

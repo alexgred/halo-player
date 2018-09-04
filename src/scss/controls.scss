@@ -71,5 +71,15 @@
       font-family: 'Halo';
       color: $controlsColor;
     }
+
+    &_hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &_show {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }

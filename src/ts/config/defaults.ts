@@ -11,7 +11,13 @@ const defaults: IConfig = {
     controls: 'halo__controls',
     controlsPlay: 'halo__control halo__control-play halo__icon-play',
     controlsMute: 'halo__control halo__control-mute halo__icon-volume-medium',
-    controlsFullScreen: 'halo__control halo__control-fullscreen halo__icon-expand'
+    controlsFullScreen: 'halo__control halo__control-fullscreen halo__icon-expand',
+    controlsIconPlay: 'halo__icon-play',
+    controlsIconPause: 'halo__icon-pause',
+    controlsIconUnmuted: 'halo__icon-volume-medium',
+    controlsIconMuted: 'halo__icon-volume-mute',
+    controlHide: 'halo__control_hide',
+    controlShow: 'halo__control_show',
   }
 };
 
